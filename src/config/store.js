@@ -19,7 +19,7 @@
 
 export const storeConfig = {
   // --- Identity -------------------------------------------------
-  name: 'Karthik's Brow Fashion',
+  name: 'Karthik Brow Fashion',
   tagline: 'Quality Fashion. Great Styles. Made for You.',
   logoUrl: '/logo.svg', // replace with your uploaded logo path or Supabase Storage URL
 
