@@ -44,6 +44,7 @@ export default function AdminProductForm({ initialProduct, onSaved }) {
       mrp: initialProduct.mrp ?? '',
     };
   });
+  const [colourImages, setColourImages] = useState(() => initialProduct?.colour_images || {});
   const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
@@ -78,6 +79,25 @@ export default function AdminProductForm({ initialProduct, onSaved }) {
     }
   }
 
+  async function handleColourImageUpload(e, colourName) {
+    const file = e.target.files?.[0];
+    if (!file || !form.product_code) {
+      setError('Enter a product code before uploading images.');
+      return;
+    }
+    setUploading(true);
+    setError('');
+    const { data, error: uploadError } = await uploadProductImage(form.product_code, file);
+    setUploading(false);
+    if (uploadError) {
+      setError(uploadError.message || 'Image upload failed.');
+      return;
+    }
+    setColourImages((prev) => ({ ...prev, [colourName]: data.publicUrl }));
+  }
+
+  const colourList = form.colours.split(',').map((c) => c.trim()).filter(Boolean);
+
   async function handleSubmit(e) {
     e.preventDefault();
     setSaving(true);
@@ -99,6 +119,10 @@ export default function AdminProductForm({ initialProduct, onSaved }) {
       care_instructions: form.care_instructions,
       main_image: form.main_image,
       additional_images: form.additional_images.split(',').map((s) => s.trim()).filter(Boolean),
+      // Only keep colour_images entries for colours that still exist on this product.
+      colour_images: Object.fromEntries(
+        Object.entries(colourImages).filter(([colour, url]) => colourList.includes(colour) && url)
+      ),
       is_available: form.is_available,
       is_featured: form.is_featured,
       is_new_arrival: form.is_new_arrival,
@@ -174,6 +198,34 @@ export default function AdminProductForm({ initialProduct, onSaved }) {
         <span className="mb-1 block text-xs font-medium text-ink-soft/70">Colours (comma-separated)</span>
         <input value={form.colours} onChange={(e) => set('colours', e.target.value)} placeholder="Black, Navy" className="w-full rounded-sm border border-ink/15 px-3 py-2 text-sm" />
       </label>
+
+      {colourList.length > 0 && (
+        <div className="text-sm md:col-span-2">
+          <span className="mb-2 block text-xs font-medium text-ink-soft/70">
+            Photo per colour (optional — shown when a customer selects that colour on the product page)
+          </span>
+          <div className="flex flex-col gap-3 rounded-sm border border-ink/10 bg-sand-50 p-3">
+            {colourList.map((colour) => (
+              <div key={colour} className="flex flex-wrap items-center gap-3">
+                <span className="w-24 shrink-0 font-medium">{colour}</span>
+                <input
+                  value={colourImages[colour] || ''}
+                  onChange={(e) => setColourImages((prev) => ({ ...prev, [colour]: e.target.value }))}
+                  placeholder="Image URL, or upload below"
+                  className="min-w-[200px] flex-1 rounded-sm border border-ink/15 px-3 py-2 text-sm"
+                />
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handleColourImageUpload(e, colour)}
+                  disabled={uploading}
+                  className="text-xs"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <label className="text-sm">
         <span className="mb-1 block text-xs font-medium text-ink-soft/70">Fabric</span>

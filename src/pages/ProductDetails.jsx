@@ -71,6 +71,8 @@ export default function ProductDetails() {
 
   const p = state.product;
   const enquiryUrl = enquiryUrlForSticky;
+  const colourImage = colour && p.colour_images ? p.colour_images[colour] : null;
+  const effectiveMainImage = colourImage || p.main_image;
 
   return (
     <div className="container-page py-10 sm:pb-10">
@@ -87,7 +89,12 @@ export default function ProductDetails() {
       </nav>
 
       <div className="grid gap-10 md:grid-cols-2">
-        <ProductGallery mainImage={p.main_image} additionalImages={p.additional_images} alt={p.name} />
+        <ProductGallery
+          key={colour || 'default'}
+          mainImage={effectiveMainImage}
+          additionalImages={p.additional_images}
+          alt={p.name}
+        />
 
         <div>
           <h1 className="font-display text-3xl text-ink">{p.name}</h1>
