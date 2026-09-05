@@ -3,17 +3,13 @@
 
 export const CATEGORIES = [
   { value: 'men', label: 'Men' },
-  { value: 'women', label: 'Women' },
-  { value: 'kids', label: 'Kids' },
 ];
 
 export const SUBCATEGORIES_BY_CATEGORY = {
-  men: ['Shirts', 'T-Shirts', 'Jeans', 'Trousers', 'Kurtas'],
-  women: ['Sarees', 'Kurtis', 'Chudidars', 'Dresses', 'Tops'],
-  kids: ['Boys', 'Girls', 'Ethnic Wear'],
+  men: ['Shirts', 'T-Shirts', 'Jeans', 'Trousers', 'Cotton Pants'],
 };
 
-export const SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+export const SIZES = ['M', 'L', 'XL'];
 
 export const COLOURS = [
   'Black', 'White', 'Navy', 'Blue', 'Maroon', 'Beige', 'Olive', 'Pink', 'Green', 'Gold', 'Grey',

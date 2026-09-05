@@ -25,9 +25,7 @@ const TRUST_POINTS = [
 
 const CATEGORY_CARDS = [
   { title: 'Men', to: '/shop?category=men', image: 'https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=800&q=60', key: 'men' },
-  { title: 'Women', to: '/shop?category=women', image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=60', key: 'women' },
-  { title: 'Kids', to: '/shop?category=kids', image: 'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=60', key: 'kids' },
-  { title: 'New Arrivals', to: '/shop?sort=newest', image: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=60' },
+ { title: 'New Arrivals', to: '/shop?sort=newest', image: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=60' },
 ];
 
 export default function Home() {

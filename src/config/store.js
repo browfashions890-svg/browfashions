@@ -19,7 +19,7 @@
 
 export const storeConfig = {
   // --- Identity -------------------------------------------------
-  name: 'Aavaran',
+  name: 'AavaranKarthik's Brow Fashion',
   tagline: 'Quality Fashion. Great Styles. Made for You.',
   logoUrl: '/logo.svg', // replace with your uploaded logo path or Supabase Storage URL
 
@@ -33,8 +33,8 @@ export const storeConfig = {
 
   // --- Location -----------------------------------------------------
   address: {
-    line1: '12 Textile Lane, Fashion District',
-    line2: 'Coimbatore, Tamil Nadu 641001',
+    line1: 'Peelamedu',
+    line2: 'Coimbatore, Tamil Nadu 641004',
     line3: 'India',
   },
   googleMapsUrl: 'https://maps.google.com/?q=Aavaran+Fashion+Store', // DEMO — replace with your real Maps link
@@ -46,7 +46,7 @@ export const storeConfig = {
   // --- Hours --------------------------------------------------------
   openingHours: [
     { day: 'Monday – Saturday', hours: '10:00 AM – 8:30 PM' },
-    { day: 'Sunday', hours: '11:00 AM – 6:00 PM' },
+    { day: 'Sunday', hours: '10:00 AM – 8:30 PM' },
   ],
 
   // --- Legal pages (edit copy inside src/pages/legal/*.jsx) -------
@@ -58,7 +58,7 @@ export const storeConfig = {
 
   // --- SEO defaults ---------------------------------------------
   seo: {
-    defaultTitle: 'Aavaran — Discover Your Style',
+    defaultTitle: 'Brow Fashions — Discover Your Style',
     defaultDescription:
       'Browse the latest men\u2019s, women\u2019s and kids\u2019 fashion at Aavaran. Enquire instantly on WhatsApp — no account or checkout needed.',
     siteUrl: 'https://www.your-domain.example', // replace with your live Netlify/custom domain
