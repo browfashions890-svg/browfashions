@@ -21,7 +21,7 @@ export default function About() {
           <p className="mb-4">
             {/* DEMO copy — replace with your real store story */}
             {storeConfig.name} started as a small neighbourhood shop with one belief: good clothing should feel as
-            good as it looks. Today we curate everyday and festive wear for men, women and kids, sourced for
+            good as it looks. Today we curate everyday and festive wear for men, sourced for 
             fabric quality, fit and value.
           </p>
           <p className="mb-4">

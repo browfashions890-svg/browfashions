@@ -19,7 +19,7 @@
 
 export const storeConfig = {
   // --- Identity -------------------------------------------------
-  name: 'AavaranKarthik's Brow Fashion',
+  name: 'Karthik's Brow Fashion',
   tagline: 'Quality Fashion. Great Styles. Made for You.',
   logoUrl: '/logo.svg', // replace with your uploaded logo path or Supabase Storage URL
 
@@ -60,7 +60,7 @@ export const storeConfig = {
   seo: {
     defaultTitle: 'Brow Fashions — Discover Your Style',
     defaultDescription:
-      'Browse the latest men\u2019s, women\u2019s and kids\u2019 fashion at Aavaran. Enquire instantly on WhatsApp — no account or checkout needed.',
+      'Browse the latest men Browse the latest men's fashion. Enquire instantly on WhatsApp.— no account or checkout needed.',
     siteUrl: 'https://www.your-domain.example', // replace with your live Netlify/custom domain
   },
 };
