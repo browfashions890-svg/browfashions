@@ -60,9 +60,8 @@ export const storeConfig = {
   seo: {
     defaultTitle: 'Brow Fashions — Discover Your Style',
     defaultDescription:
-      'Browse the latest men Browse the latest men's fashion. Enquire instantly on WhatsApp.— no account or checkout needed.',
+      "Browse the latest men's fashion at Brow Fashions. Enquire instantly on WhatsApp.",
     siteUrl: 'https://www.your-domain.example', // replace with your live Netlify/custom domain
-  },
-};
+  },};
 
 export default storeConfig;
